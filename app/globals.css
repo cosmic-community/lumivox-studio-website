@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui;
+  background-color: #0b0b14;
+  color: #f0ede8;
+}
+
+a {
+  color: inherit;
+}
