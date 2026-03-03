@@ -4,7 +4,7 @@ export interface CosmicObject {
   title: string
   content?: string
   metadata: Record<string, unknown>
-  type: string
+  type?: string // Changed: made optional to allow sub-interfaces to narrow to string literals without TS2430
   created_at?: string
   modified_at?: string
 }
@@ -24,9 +24,8 @@ export interface PageSection {
   headline?: string
 }
 
-// Changed: type is now required (not optional) to properly extend CosmicObject
 export interface Page extends CosmicObject {
-  type: "pages" // Changed: removed ? to fix TS2430
+  type: "pages"
   metadata: {
     template?: {
       key: PageTemplateKey
@@ -40,9 +39,8 @@ export interface Page extends CosmicObject {
   }
 }
 
-// Changed: type is now required (not optional) to properly extend CosmicObject
 export interface Service extends CosmicObject {
-  type: "services" // Changed: removed ? to fix TS2430
+  type: "services"
   metadata: {
     title?: string
     icon?: string
@@ -51,9 +49,8 @@ export interface Service extends CosmicObject {
   }
 }
 
-// Changed: type is now required (not optional) to properly extend CosmicObject
 export interface Project extends CosmicObject {
-  type: "projects" // Changed: removed ? to fix TS2430
+  type: "projects"
   metadata: {
     title?: string
     category_tags?: string
@@ -69,9 +66,8 @@ export interface Project extends CosmicObject {
   }
 }
 
-// Changed: type is now required (not optional) to properly extend CosmicObject
 export interface Testimonial extends CosmicObject {
-  type: "testimonials" // Changed: removed ? to fix TS2430
+  type: "testimonials"
   metadata: {
     quote?: string
     author_name?: string
@@ -84,9 +80,8 @@ export interface Testimonial extends CosmicObject {
   }
 }
 
-// Changed: type is now required (not optional) to properly extend CosmicObject
 export interface BlogPost extends CosmicObject {
-  type: "blog-posts" // Changed: removed ? to fix TS2430
+  type: "blog-posts"
   metadata: {
     title?: string
     excerpt?: string
@@ -100,9 +95,8 @@ export interface BlogPost extends CosmicObject {
   }
 }
 
-// Changed: type is now required (not optional) to properly extend CosmicObject
 export interface SiteSettings extends CosmicObject {
-  type: "site-settings" // Changed: removed ? to fix TS2430
+  type: "site-settings"
   metadata: {
     site_name?: string
     tagline?: string
