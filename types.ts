@@ -24,9 +24,10 @@ export interface PageSection {
   headline?: string
 }
 
+// Changed: metadata is now required (not optional) to properly extend CosmicObject
 export interface Page extends CosmicObject {
   type?: "pages"
-  metadata?: {
+  metadata: {
     template?: {
       key: PageTemplateKey
       value: PageTemplateValue
@@ -39,9 +40,10 @@ export interface Page extends CosmicObject {
   }
 }
 
+// Changed: metadata is now required (not optional) to properly extend CosmicObject
 export interface Service extends CosmicObject {
   type?: "services"
-  metadata?: {
+  metadata: {
     title?: string
     icon?: string
     description?: string
@@ -49,9 +51,10 @@ export interface Service extends CosmicObject {
   }
 }
 
+// Changed: metadata is now required (not optional) to properly extend CosmicObject
 export interface Project extends CosmicObject {
   type?: "projects"
-  metadata?: {
+  metadata: {
     title?: string
     category_tags?: string
     description?: string
@@ -66,9 +69,10 @@ export interface Project extends CosmicObject {
   }
 }
 
+// Changed: metadata is now required (not optional) to properly extend CosmicObject
 export interface Testimonial extends CosmicObject {
   type?: "testimonials"
-  metadata?: {
+  metadata: {
     quote?: string
     author_name?: string
     role?: string
@@ -80,9 +84,10 @@ export interface Testimonial extends CosmicObject {
   }
 }
 
+// Changed: metadata is now required (not optional) to properly extend CosmicObject
 export interface BlogPost extends CosmicObject {
   type?: "blog-posts"
-  metadata?: {
+  metadata: {
     title?: string
     excerpt?: string
     content?: string
@@ -95,9 +100,10 @@ export interface BlogPost extends CosmicObject {
   }
 }
 
+// Changed: metadata is now required (not optional) to properly extend CosmicObject
 export interface SiteSettings extends CosmicObject {
   type?: "site-settings"
-  metadata?: {
+  metadata: {
     site_name?: string
     tagline?: string
     logo?: {
